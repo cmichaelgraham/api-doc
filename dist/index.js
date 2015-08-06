@@ -37,22 +37,22 @@ exports['default'] = function (babel) {
     }
   };
 
-  return new Transformer('aurelia-babel-plugin', {
+  return new Transformer('aurelia-api-generator-plugin', {
     Program: {
       enter: function enter(node, parent) {
         meta = {};
         var _state$opts = this.state.opts;
         var filename = _state$opts.filename;
         var moduleRoot = _state$opts.moduleRoot;
-        var _state$opts$extra$dts = _state$opts.extra.dts;
-        var packageName = _state$opts$extra$dts.packageName;
-        var typings = _state$opts$extra$dts.typings;
-        var _state$opts$extra$dts$suppressModulePath = _state$opts$extra$dts.suppressModulePath;
-        var suppressModulePath = _state$opts$extra$dts$suppressModulePath === undefined ? false : _state$opts$extra$dts$suppressModulePath;
-        var _state$opts$extra$dts$suppressComments = _state$opts$extra$dts.suppressComments;
-        var suppressComments = _state$opts$extra$dts$suppressComments === undefined ? false : _state$opts$extra$dts$suppressComments;
-        var _state$opts$extra$dts$ignoreMembers = _state$opts$extra$dts.ignoreMembers;
-        var ignoreMembers = _state$opts$extra$dts$ignoreMembers === undefined ? /^_.*/ : _state$opts$extra$dts$ignoreMembers;
+        var _state$opts$extra$api = _state$opts.extra.api;
+        var packageName = _state$opts$extra$api.packageName;
+        var typings = _state$opts$extra$api.typings;
+        var _state$opts$extra$api$suppressModulePath = _state$opts$extra$api.suppressModulePath;
+        var suppressModulePath = _state$opts$extra$api$suppressModulePath === undefined ? false : _state$opts$extra$api$suppressModulePath;
+        var _state$opts$extra$api$suppressComments = _state$opts$extra$api.suppressComments;
+        var suppressComments = _state$opts$extra$api$suppressComments === undefined ? false : _state$opts$extra$api$suppressComments;
+        var _state$opts$extra$api$ignoreMembers = _state$opts$extra$api.ignoreMembers;
+        var ignoreMembers = _state$opts$extra$api$ignoreMembers === undefined ? /^_.*/ : _state$opts$extra$api$ignoreMembers;
 
         var moduleId = packageName + '/' + (0, _path.relative)(moduleRoot, filename).replace('.js', '');
         meta.root = packageName;
@@ -61,7 +61,7 @@ exports['default'] = function (babel) {
         meta.moduleImports = [];
         meta.interfaces = [];
         meta.skipStack = [];
-        meta.outpath = (0, _path.join)(typings, moduleId + '.d.ts');
+        meta.outpath = (0, _path.join)(typings, moduleId + '-api.json');
         meta.suppressModulePath = suppressModulePath;
         meta.suppressComments = suppressComments;
         meta.ignoreMembers = ignoreMembers;

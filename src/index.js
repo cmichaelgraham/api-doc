@@ -22,11 +22,11 @@ export default function(babel) {
     }
   };
 
-  return new Transformer('aurelia-babel-plugin', {
+  return new Transformer('aurelia-api-generator-plugin', {
     Program: {
       enter(node, parent) {
         meta = {};
-        const {filename, moduleRoot, extra: {dts: {packageName, typings, suppressModulePath = false, suppressComments = false, ignoreMembers = /^_.*/}}} = this.state.opts;
+        const {filename, moduleRoot, extra: {api: {packageName, typings, suppressModulePath = false, suppressComments = false, ignoreMembers = /^_.*/}}} = this.state.opts;
         const moduleId = packageName + '/' + relative(moduleRoot, filename).replace('.js', '');
         meta.root = packageName;
         meta.moduleId = moduleId;
@@ -34,7 +34,7 @@ export default function(babel) {
         meta.moduleImports = [];
         meta.interfaces = [];
         meta.skipStack = [];
-        meta.outpath = join(typings, moduleId + '.d.ts');
+        meta.outpath = join(typings, moduleId + '-api.json');
         meta.suppressModulePath = suppressModulePath;
         meta.suppressComments = suppressComments;
         meta.ignoreMembers = ignoreMembers;

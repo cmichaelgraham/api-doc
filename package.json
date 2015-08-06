@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cmichaelgraham/api-generator.git"
+    "url": "https://github.com/cmichaelgraham/aurelia-api-generator.git"
   },
   "keywords": [
     "aurelia",
@@ -17,9 +17,9 @@
   "author": "cmichaelgraham",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cmichaelgraham/api-generator/issues"
+    "url": "https://github.com/cmichaelgraham/aurelia-api-generator/issues"
   },
-  "homepage": "https://github.com/cmichaelgraham/api-generator",
+  "homepage": "https://github.com/cmichaelgraham/aurelia-api-generator",
   "devDependencies": {
     "gulp": "^3.8.10",
     "gulp-babel": "^5.1.0",
