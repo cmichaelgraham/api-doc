@@ -1,8 +1,8 @@
 {
-  "name": "api-generator",
+  "name": "aurelia-api-generator",
   "version": "0.0.1",
-  "description": "Babel API generator",
-  "main": "lib/index.js",
+  "description": "Babel API generator for Aurelia",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
